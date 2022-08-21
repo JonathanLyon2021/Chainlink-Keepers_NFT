@@ -28,6 +28,9 @@ contract ColorToken is ERC721 {
     function getAllTokens() public view returns (Color[] memory) {
         return allTokens;
     }
+    function getMyTokens() public view returns (Color[] memory) {
 
+        return tokenAddress[msg.sender];
+    }
 }
 
