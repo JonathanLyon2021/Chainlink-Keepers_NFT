@@ -4,7 +4,11 @@ pragma solidity ^0.8.11;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract StarToken is ERC721 {
+string constant name = "StarToken";
+
+string constant symbol = "STR";
+
+contract StarToken is ERC721(name, symbol) {
 
         address public owner;
         uint256 tokenId = 1;
