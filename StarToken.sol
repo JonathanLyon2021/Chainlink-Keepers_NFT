@@ -37,6 +37,18 @@ contract ColorToken is ERC721 {
     function mintToken(string calldata _tokenName) public payable{
         //check to see if token already exists on blockchain
         require(!tokenExists[_tokenName], "Token already exists");
+
+        _safeMint(msg.sender, tokenId);
+
+        allTokens.push(Color(tokenId, _tokenName, msg.sender));
+
+        tokenAddress[msg.sender].push(Color(tokenId,
+        _tokenName,
+        msg.sender));
+
+        tokenExists[_tokenName] = true;
+
+        tokenId++;
     }
 }
 
