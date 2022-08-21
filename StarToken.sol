@@ -28,9 +28,15 @@ contract ColorToken is ERC721 {
     function getAllTokens() public view returns (Color[] memory) {
         return allTokens;
     }
+   
     function getMyTokens() public view returns (Color[] memory) {
 
         return tokenAddress[msg.sender];
+    }
+    
+    function mintToken(string calldata _tokenName) public payable{
+        //check to see if token already exists on blockchain
+        require(!tokenExists[_tokenName], "Token already exists");
     }
 }
 
