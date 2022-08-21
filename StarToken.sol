@@ -14,8 +14,8 @@ contract ColorToken is ERC721 {
             string tokenName;
             address owner;
         }
-    
-    Color[] public alltokens;
+
+    Color[] public allTokens;
 
     mapping(address => Color[]) public tokenAddress;
     mapping(string => bool) public tokenExists;
@@ -24,4 +24,10 @@ contract ColorToken is ERC721 {
         
         owner = msg.sender;
     }
-       }
+
+    function getAllTokens() public view returns (Color[] memory) {
+        return allTokens;
+    }
+
+}
+
