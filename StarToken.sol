@@ -17,7 +17,10 @@ contract ColorToken is ERC721 {
 
     Color[] public allTokens;
 
-
+        
+    mapping(address => Color[]) public tokenAddress;
+    mapping(string => bool) public tokenExists;
+    
     constructor() ERC721("ColorToken", "CLR"){
         
         owner = msg.sender;
