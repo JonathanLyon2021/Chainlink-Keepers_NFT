@@ -25,7 +25,7 @@ contract StarToken is ERC721(name, symbol) {
     mapping(address => Star[]) public tokenAddress;
     mapping(string => bool) public tokenExists;
     
-    constructor() ERC721("StarToken", "STR"){
+    constructor() ERC721(name, symbol){
         
         owner = msg.sender;
     }
