@@ -30,6 +30,7 @@ contract StarToken is ERC721 {
     }
 
     function getAllTokens() public view returns (Star[] memory) {
+    //return token array
         return allTokens;
     }
    
