@@ -41,7 +41,7 @@ contract StarToken is ERC721 {
     
     function mintToken(string calldata _tokenName) public payable{
         //check to see if token already exists on blockchain, if so send authentication error message.
-        require(!tokenExists[_tokenName], "Token already exists");
+        require(!tokenExists[_tokenName], "Token already exists!");
 
         _safeMint(msg.sender, tokenId);
 
