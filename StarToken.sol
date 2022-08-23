@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-string constant name = "StarToken";
-string constant symbol = "STR";
+string constant name = "StarsToken";
+string constant symbol = "STRS";
 
 contract StarsToken is ERC721 {
 
