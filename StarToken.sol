@@ -7,34 +7,34 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 string constant name = "StarToken";
 string constant symbol = "STR";
 
-contract StarToken is ERC721 {
+contract StarsToken is ERC721 {
 
         address public owner;
         uint256 tokenId = 1;
 
-        struct Star {
+        struct Stars {
             uint tokenId;
             string tokenName;
             address owner;
         }
 
-    Star[] public allTokens;
+    Stars[] public allTokens;
 
         
-    mapping(address => Star[]) public tokenAddress;
+    mapping(address => Stars[]) public tokenAddress;
     mapping(string => bool) public tokenExists;
     
-    constructor() ERC721("StarToken", "STR"){
+    constructor() ERC721("StarsToken", "STR"){
         
         owner = msg.sender;
     }
 
-    function getAllTokens() public view returns (Star[] memory) {
+    function getAllTokens() public view returns (Stars[] memory) {
     //return token array
         return allTokens;
     }
    
-    function getMyTokens() public view returns (Star[] memory) {
+    function getMyTokens() public view returns (Stars[] memory) {
 
         return tokenAddress[msg.sender];
     }
@@ -45,9 +45,9 @@ contract StarToken is ERC721 {
 
         _safeMint(msg.sender, tokenId);
 
-        allTokens.push(Star(tokenId, _tokenName, msg.sender));
+        allTokens.push(Stars(tokenId, _tokenName, msg.sender));
 
-        tokenAddress[msg.sender].push(Star(tokenId,
+        tokenAddress[msg.sender].push(Stars(tokenId,
         _tokenName,
         msg.sender));
 
