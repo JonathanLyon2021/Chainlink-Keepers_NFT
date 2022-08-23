@@ -17,7 +17,8 @@ contract StarToken is ERC721 {
             string tokenName;
             address owner;
         }
-
+        
+        //Instantiate allTokens which is an Array(Star[])
     Star[] public allTokens;
 
         
