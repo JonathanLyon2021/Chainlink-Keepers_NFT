@@ -4,37 +4,37 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-string constant name = "StarsToken";
-string constant symbol = "STRS";
+string constant name = "StarToken";
+string constant symbol = "STR";
 
-contract StarsToken is ERC721 {
+contract StarToken is ERC721 {
 
         address public owner;
         uint256 tokenId = 1;
 
-        struct Stars {
+        struct Star {
             uint tokenId;
             string tokenName;
             address owner;
         }
 
-    Stars[] public allTokens;
+    Star[] public allTokens;
 
         
-    mapping(address => Stars[]) public tokenAddress;
+    mapping(address => Star[]) public tokenAddress;
     mapping(string => bool) public tokenExists;
     
-    constructor() ERC721("StarsToken", "STR"){
+    constructor() ERC721("StarToken", "STR"){
         
         owner = msg.sender;
     }
 
-    function getAllTokens() public view returns (Stars[] memory) {
+    function getAllTokens() public view returns (Star[] memory) {
     //return token array
         return allTokens;
     }
    
-    function getMyTokens() public view returns (Stars[] memory) {
+    function getMyTokens() public view returns (Star[] memory) {
 
         return tokenAddress[msg.sender];
     }
@@ -45,9 +45,9 @@ contract StarsToken is ERC721 {
 
         _safeMint(msg.sender, tokenId);
 
-        allTokens.push(Stars(tokenId, _tokenName, msg.sender));
+        allTokens.push(Star(tokenId, _tokenName, msg.sender));
 
-        tokenAddress[msg.sender].push(Stars(tokenId,
+        tokenAddress[msg.sender].push(Star(tokenId,
         _tokenName,
         msg.sender));
 
