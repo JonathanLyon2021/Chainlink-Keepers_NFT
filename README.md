@@ -6,7 +6,7 @@ VRF (Verifiable Random Function), which is a proveable fair and verifiable rando
 random values without compromising security or usability. This project is a combination of truffle, solidity, openzeppelin, and React.js ,
 but the best part about this project though is implementing Chainlink's Keepers program which allows you to use Event triggered or Time 
 triggered funnctions on your smart contract. Also being able on manage an UpKeep for the NFT's on-chain through the keepers implementation 
-so we can choose or NFT triggering event using the functions to active different parts of the NFT. Thank you for viewing my repositiory.
+so we can choose a NFT triggering event using the functions to active different parts of the NFT. Thank you for viewing my repositiory.
 
 
 
